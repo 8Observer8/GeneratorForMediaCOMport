@@ -9,7 +9,7 @@ class PortError : public std::runtime_error
 public:
     PortError( const std::string &errorText ) : std::runtime_error( "" )
     {
-        m_message = "Error: " + errorText;
+        m_message = errorText;
     }
 
     virtual ~PortError() throw()

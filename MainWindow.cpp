@@ -12,14 +12,6 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->setupUi(this);
 
     m_sender = new Sender;
-
-    try {
-        m_sender->open();
-    } catch ( const PortError &e ) {
-        QMessageBox::information( this, "Error", QString( e.what() ) );
-    } catch ( ... ) {
-        QMessageBox::information( this, "Error", "Error: unknown exception" );
-    }
 }
 
 MainWindow::~MainWindow()

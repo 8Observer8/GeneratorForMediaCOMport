@@ -24,7 +24,8 @@ void Sender::open() throw( PortError )
 {
     // Open the port
     if ( !m_serialPort.open( QIODevice::WriteOnly ) ) {
-        throw PortError( m_serialPort.errorString().toStdString() );
+        throw PortError( "Error: unable to open the port \"" +
+                         m_serialPort.portName().toStdString() + "\"" );
     }
 
     m_serialPort.setBaudRate( m_baudRate );
